@@ -1,0 +1,39 @@
+query GetPosts {
+  getPosts {
+    id
+    title
+    content
+  }
+}
+
+query GetPost {
+  getPost(id: "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a0") {
+    id
+    title
+    content
+  }
+}
+
+mutation CreatePost {
+  createPost(newPost: { title: "Test Title", content: "Test Content" }) {
+    id
+    title
+    content
+  }
+}
+
+mutation DeletePost {
+  deletePost(id: `a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a0`) {
+    title
+    content
+    id
+  }
+}
+
+mutation UpdatePost {
+  updatePost(newPost: {title: "updatedTitle", content: "updatedContent"}) {
+    id
+    title
+    content
+  }
+}
