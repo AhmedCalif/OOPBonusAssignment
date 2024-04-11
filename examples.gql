@@ -3,6 +3,10 @@ query GetPosts {
     id
     title
     content
+    tag {
+      id
+      name
+    }
   }
 }
 
@@ -11,29 +15,60 @@ query GetPost {
     id
     title
     content
+    tag {
+      id
+      name
+    }
+  }
+}
+
+query GetTags {
+  getTags {
+    id
+    name
+  }
+}
+
+query GetPostsByTag($tagId: ID!) {
+  getPostsByTag(tagId: $tagId) {
+    id
+    title
+    content
+    tag {
+      id
+      name
+    }
   }
 }
 
 mutation CreatePost {
-  createPost(newPost: { title: "Test Title", content: "Test Content" }) {
+  createPost(newPost: { title: "Test Title", content: "Test Content", tagId: "someTagId"}) {
     id
     title
     content
+    tag {
+      id
+      name
+    }
   }
 }
 
 mutation DeletePost {
-  deletePost(id: `a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a0`) {
+  deletePost(id: "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a0") {
+    id
     title
     content
-    id
   }
 }
 
 mutation UpdatePost {
-  updatePost(newPost: {title: "updatedTitle", content: "updatedContent"}) {
+  updatePost(id: "a0a0a0a0-a0a0-a0a0-a0a0-a0a0a0a0a0a0", newPost: {title: "updatedTitle", content: "updatedContent", tagId: "someTagId"}) {
     id
     title
     content
+    tag {
+      id
+      name
+    }
   }
 }

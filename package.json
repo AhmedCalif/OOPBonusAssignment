@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "nodemon src/index.js",
     "dev": "node --watch-path=src src/index.js"
   },
   "author": "",
@@ -17,6 +17,7 @@
     "fastify": "^4.26.2",
     "fastify-plugin": "^4.5.1",
     "mercurius": "^13.4.1",
+    "nodemon": "^3.1.0",
     "pino-pretty": "^10.3.1"
   }
 }
